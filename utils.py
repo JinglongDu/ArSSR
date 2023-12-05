@@ -36,7 +36,7 @@ def make_coord(shape, ranges=None, flatten=True):
             v0, v1 = -1, 1  # coordinate range
         else:
             v0, v1 = ranges[i]
-        r = (v1 - v0) / (2 * n)
+        r = (v1 - v0) / (2 * n)  # split coordinate v0-v1, 2xn calibrations
         seq = v0 + r + (2 * r) * torch.arange(n).float()
         coord_seqs.append(seq)
     ret = torch.stack(torch.meshgrid(*coord_seqs), dim=-1)
