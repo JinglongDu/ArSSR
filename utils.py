@@ -33,7 +33,7 @@ def make_coord(shape, ranges=None, flatten=True):
     coord_seqs = []
     for i, n in enumerate(shape):
         if ranges is None:
-            v0, v1 = -1, 1
+            v0, v1 = -1, 1  # coordinate range
         else:
             v0, v1 = ranges[i]
         r = (v1 - v0) / (2 * n)
